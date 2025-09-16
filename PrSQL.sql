@@ -1,3 +1,31 @@
+create table salary_history (
+    sh_id int PRIMARY KEY,
+    emp_id int,
+    old_salary int NOT NULL,
+    new_salary int NOT NULL,
+    change_date date NOT NULL,
+    reason varchar(100),
+    created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+    updated_at timestamp DEFAULT CURRENT_TIMESTAMP
+);
+
+select * from salary_history;
+
+INSERT INTO salary_history (
+    sh_id, emp_id, old_salary, new_salary, change_date, reason
+) VALUES
+(1, 1, 60000, 70000, '2022-06-01', 'Annual Raise'),
+(2, 2, 35000, 40000, '2022-02-01', 'Promotion'),
+(3, 3, 40000, 45000, '2022-03-01', 'Performance Bonus'),
+(4, 4, 55000, 60000, '2022-04-01', 'Market Adjustment'),
+(5, 5, 50000, 55000, '2022-05-01', 'Cost of Living Increase'),
+(6, 1, 50000, 60000, '2021-06-01', 'Annual Raise'),
+(7, 2, 30000, 35000, '2021-02-01', 'Promotion'),
+(8, 3, 35000, 40000, '2021-03-01', 'Performance Bonus'),
+(9, 4, 50000, 55000, '2021-04-01', 'Market Adjustment'),
+(10, 5, 45000, 50000, '2021-05-01', 'Cost of Living Increase');
+
+
 create table managers (
     m_id int PRIMARY KEY,
     m_salary int NOT NULL,
