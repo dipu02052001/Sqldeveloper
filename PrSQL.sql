@@ -14,7 +14,7 @@ select * from salary_history;
 INSERT INTO salary_history (
     sh_id, emp_id, old_salary, new_salary, change_date, reason
 ) VALUES
-(1, 1, 60000, 70000, '2022-06-01', 'Annual Raise'),
+(1, 1, 60000, 70000, '2019-06-01', 'Annual Raise'),
 (2, 2, 35000, 40000, '2022-02-01', 'Promotion'),
 (3, 3, 40000, 45000, '2022-03-01', 'Performance Bonus'),
 (4, 4, 55000, 60000, '2022-04-01', 'Market Adjustment'),
@@ -25,6 +25,8 @@ INSERT INTO salary_history (
 (9, 4, 50000, 55000, '2021-04-01', 'Market Adjustment'),
 (10, 5, 45000, 50000, '2021-05-01', 'Cost of Living Increase');
 
+update salary_history set change_date = '2016-03-09' where emp_id=1 ;
+commit
 
 create table managers (
     m_id int PRIMARY KEY,
